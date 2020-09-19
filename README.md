@@ -1,5 +1,7 @@
 # todo-app
 
+todo app following https://www.youtube.com/watch?v=Wy9q22isx3U&ab_channel=TraversyMedia
+
 ## Project setup
 ```
 npm install
