@@ -1,64 +1,19 @@
 <template>
   <div id="app">
     <Header/>
-    <Todos v-bind:todos="todosFakeData" v-on:del-todo="deleteTodo"/>
-    <AddTodo v-on:add-todo="addTodo"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Header from './components/layouts/Header.vue'
-import Todos from './components/Todos.vue'
-import AddTodo from './components/AddTodo.vue'
+  import Header from './components/layouts/Header.vue'
 
-function deleteTodo(id){
-  this.todosFakeData = this.todosFakeData.filter(todo => todo.id != id)
-}
-
-function addTodo(data){
-  this.todosFakeData.push({
-    id: this.nextId,
-    title: data,
-    completed: false
-  });
-  this.nextId ++
-  // alert(this.todosFakeData)
-}
-
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Todos,
-    AddTodo
-  }, 
-  methods: {
-    deleteTodo,
-    addTodo
-  },
-  data() {
-    return {
-      nextId: 4,
-      todosFakeData:[
-        {
-          id: 1,
-          title: "todo1",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "todo2",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "todo3",
-          completed: false
-        }
-      ]
+  export default {
+    name: 'App',
+    components: {
+      Header
     }
   }
-}
 
 </script>
 
@@ -69,6 +24,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
