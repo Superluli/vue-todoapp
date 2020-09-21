@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Todos from '../components/Todos.vue'
-import AddTodo from '../components/AddTodo.vue'
+import Todos from '../components/todos/Todos.vue'
+import AddTodo from '../components/todos/AddTodo.vue'
 import axios from 'axios'
 
 function deleteTodo(id){
@@ -40,13 +40,6 @@ export default {
     }
   },
   created() {
-    var xxx = {
-      a:1,
-      b:2
-    }
-    console.log(xxx.a + "   " + xxx.b)
-    const {a,b} = xxx
-    console.log(a + " ___  " + b)
     axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
     .then(response => this.todosData = response.data)
     .catch(function (error) {
