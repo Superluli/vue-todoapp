@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import TodoApp from '../views/TodoApp.vue'
-import TestApp from '../views/TestApp.vue'
+import TodoApp from '@/views/TodoApp.vue'
+import TestApp from '@/views/TestApp.vue'
 
 Vue.use(VueRouter)
 

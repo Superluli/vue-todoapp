@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Todos from '../components/todos/Todos.vue'
-import AddTodo from '../components/todos/AddTodo.vue'
+import Todos from '@/components/todos/Todos.vue'
+import AddTodo from '@/components/todos/AddTodo.vue'
 import axios from 'axios'
 
 function deleteTodo(id){
@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      nextId: 4,
+      nextId: 6,
       todosData:[]
     }
   },
